@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medisin Hangman</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+  main{
+  display: flex;
+  min-height: 90vh;
+  min-width: 100vw;
+  align-items: center;
+  justify-content: center;
+  background: #212c3b;
+}
+.wrapper{
+  width: 630px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.wrapper h1{
+  font-size: 25px;
+  font-weight: 500;
+  padding: 20px 25px;
+  border-bottom: 1px solid #ccc;
+}
+.wrapper .content{
+  margin: 25px 25px 35px;
+}
+.content .inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.inputs input{
+  height: 57px;
+  width: 56px;
+  margin: 4px;
+  font-size: 24px;
+  font-weight: 500;
+  color: #212c3b;
+  text-align: center;
+  border-radius: 5px;
+  background: none;
+  pointer-events: none;
+  text-transform: uppercase;
+  border: 1px solid #35345b;
+}
+.inputs.riktig > input{
+  background-color: green;
+}
+.inputs.feil > input{
+  background-color: red;
+}
+
+.typing-input {
+  opacity: 0;
+  z-index: -999;
+  position: absolute;
+  pointer-events: none;
+}
+.inputs input:first-child{
+  margin-left: 0px;
+}
+.content .details{
+  margin: 20px 0 25px;
+}
+.details p{
+  font-size: 19px;
+  margin-bottom: 10px;
+}
+.content .reset-btn{
+  width: 100%;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  outline: none;
+  padding: 15px 0;
+  font-size: 17px;
+  border-radius: 5px;
+  background: #212c3b;
+  transition: all 0.3s ease;
+}
+.content .reset-btn:hover{
+  background: #25354b;
+}
+@media screen and (max-width: 550px) {
+  .wrapper {
+    width: 80%;
+  }
+  .wrapper h1{
+    font-size: 18px;
+    padding: 14px 18px;
+  }
+  .wrapper .content{
+    margin: 25px 20px 35px;
+  }
+  .inputs input{
+    height: 51px;
+    width: 50px;
+    margin: 3px;
+    font-size: 22px;
+  }
+  .details p{
+    font-size: 17px;
+  }
+  .content .reset-btn{
+    padding: 14px 0;
+    font-size: 16px;
+  }
+}
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="topnav">
+          <a href="../index.html" class="logo">MMM</a>
+          <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul class="navlinker">
+          <li class="spillmeny"><a href="#">Spill</a>
+            <ul class="dropdown">
+                <li><a href="../Hangman/hangman.html"> Hangman </a></li>
+                <li><a href="../TrePåRad/trepårad.html">3 på rad</a></li>
+              </ul>
+          </li>
+          <li><a href="../virbak.html">Virus og Bakterier</a></li>
+          <li><a href="../anatomi.html">Anatomi</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+    <div class="wrapper">
+      <h1>Medisin Hangman</h1>
+      <div class="content">
+        <input type="text" class="typing-input" maxlength="1">
+        <div class="inputs"></div>
+        <div class="details">
+          <p class="hint">Hint: <span></span></p>
+          <p class="guess-left">Antall gjett igjen: <span></span></p>
+          <p class="wrong-letter">Feil bokstaver: <span></span></p>
+          <p id="rad">Antall riktige på rad: </p>
+          <p id="rekord">Flest riktige på rad: </p>
+        </div>
+        <button class="reset-btn">Nytt ord</button>
+      </div>
+    </div>
+    </main>
+    <script src="../Javascript/navbar.js"></script>
+    <script src="HM_words.js"></script>
+    <script src="jshangman.js"></script>
+  </body>
+</html>
