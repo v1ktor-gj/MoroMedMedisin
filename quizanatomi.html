@@ -3,25 +3,25 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiple Choice Quiz - Anatomi</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
           <div class="topnav">
-            <a href="index.html" class="logo">MMM</a>
+            <a href="../index.html" class="logo">MMM</a>
             <i class="fa-solid fa-bars"></i>
           </div>
           <ul class="navlinker">
             <li class="spillmeny"><a href="#">Spill</a>
               <ul class="dropdown">
-                  <li><a href="jshangman.html"> Hangman </a></li>
-                  <li><a href="jstitatoe.html">3 på rad</a></li>
+                  <li><a href="../Hangman/hangman.html"> Hangman </a></li>
+                  <li><a href="../TrePåRad/trepårad.html">3 på rad</a></li>
               </ul>
           </li>
-            <li><a href="virbak.html">Virus og Bakterier</a></li>
-            <li><a href="anatomi.html">Anatomi</a></li>
+            <li><a href="../virbak.html">Virus og Bakterier</a></li>
+            <li><a href="../anatomi.html">Anatomi</a></li>
           </ul>
         </nav>
       </header>
@@ -33,13 +33,13 @@
         <div class="question">
           <p>Hva er anatomi?</p>
           <div class="answers">
-            <label>
+            <label class="feil">
               <input type="radio" name="q1" value="a"> Læren om bakterier og virus </label>
-            <label>
+            <label class="riktig">
               <input type="radio" name="q1" value="b"> Læren om kroppens oppbygning </label>
-            <label>
+            <label class="feil">
               <input type="radio" name="q1" value="c"> Læren om kroppens nervesystem </label>
-            <label>
+            <label class="feil">
               <input type="radio" name="q1" value="d"> Læren om organismers farger </label>
           </div>
         </div>
@@ -116,23 +116,5 @@
     </form>
 
   </div>
-  <script src="navbar.js"></script>
-  <script>
-    const quizForm = document.getElementById('quiz-form');
-    const resultDiv = document.getElementById('result');
-    const correctAnswers = ['b', 'd', 'd', 'a', 'c','c'];
-    
-    quizForm.addEventListener('submit', e => {
-      e.preventDefault();
-      
-      let score = 0;
-      const userAnswers = [quizForm.q1.value,quizForm.q2.value,quizForm.q3.value,quizForm.q4.value,quizForm.q5.value,quizForm.q6.value,];
-      userAnswers.forEach((answer, index) => {
-        if (answer === correctAnswers[index]) {
-          score += 1;
-        }
-      });
-    
-      resultDiv.innerHTML = `Antall poeng = ${score}/${correctAnswers.length}`;
-    });
-</script>
+  <script src="../Javascript/navbar.js"></script>
+  <script src="quiz.js"></script>

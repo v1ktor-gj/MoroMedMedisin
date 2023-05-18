@@ -1,3 +1,4 @@
+// Lager ett slags bibliotek => objekt med alle ord og hint
 const wordList = [
     {
         word: "cervical",
@@ -5,7 +6,7 @@ const wordList = [
     },
     {
         word: "thoracic",
-        hint: "Nest øverste del av ryggraden"
+        hint: "Nest øverste del av ryggmargen"
     },
     {
         word: "sacrum",
@@ -73,11 +74,11 @@ const wordList = [
     },
     {
         word: "morfin",
-        hint: "Kraftig  smertestillende"
+        hint: "Kraftig smertestillende"
     },
     {
         word: "antibiotika",
-        hint: "Brukes som behandling mot baketirell infeksjon"
+        hint: "Brukes som behandling mot bakteriell infeksjon"
     },
     {
         word: "cerebellum",

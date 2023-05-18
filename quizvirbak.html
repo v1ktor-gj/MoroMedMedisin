@@ -3,25 +3,25 @@
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Multiple Choice Quiz -Virus og Bakterier</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="../style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
           <div class="topnav">
-            <a href="index.html" class="logo">MMM</a>
+            <a href="../index.html" class="logo">MMM</a>
             <i class="fa-solid fa-bars"></i>
           </div>
           <ul class="navlinker">
             <li class="spillmeny"><a href="#">Spill</a>
               <ul class="dropdown">
-                  <li><a href="jshangman.html"> Hangman </a></li>
-                  <li><a href="jstitatoe.html">3 på rad</a></li>
+                  <li><a href="../Hangman/hangman.html"> Hangman </a></li>
+                  <li><a href="../TrePåRad/trepårad.html">3 på rad</a></li>
               </ul>
           </li>
-            <li><a href="virbak.html">Virus og Bakterier</a></li>
-            <li><a href="anatomi.html">Anatomi</a></li>
+            <li><a href="../virbak.html">Virus og Bakterier</a></li>
+            <li><a href="../anatomi.html">Anatomi</a></li>
           </ul>
         </nav>
       </header>
@@ -116,26 +116,34 @@
     </form>
 
   </div>
-  <script src="navbar.js"></script>
-  <script>
-    const quizForm = document.getElementById('quiz-form');
+  <script src="../Javascript/navbar.js"></script>
+  <script >
+    // Definerer konstanter => hentet fra HTML
+const quizForm = document.getElementById('quiz-form');
 const resultDiv = document.getElementById('result');
-const correctAnswers = ['c', 'b', 'c', 'a', 'b','d'];
+const riktig = document.querySelector('.riktig')
+const feil = document.querySelector('.feil')
 
+// Lager array med riktige svar
+const correctAnswers = ['c', 'b', 'c', 'a', 'b','d'];
+// Legger til en lytter til svarknappoen og lager en ny arrow-funksjon
 quizForm.addEventListener('submit', e => {
   e.preventDefault();
   
   let score = 0;
+  // Lager en array med verdien til alle valgene som bruker har valgt
   const userAnswers = [quizForm.q1.value,quizForm.q2.value,quizForm.q3.value,quizForm.q4.value,quizForm.q5.value,quizForm.q6.value,];
-  userAnswers.forEach((answer, index) => {
-    if (answer === correctAnswers[index]) {
+  // Lager en funksjon som sjekker for hvert (for each) valg om svaret er riktig
+  userAnswers.forEach((answer, i) => {
+    if (answer === correctAnswers[i]) {
       score += 1;
+      
     }
   });
 
+// Legger inn antall poeng i html
   resultDiv.innerHTML = `Antall poeng = ${score}/${correctAnswers.length}`;
 });
-
   </script>
  </body>
  </html>

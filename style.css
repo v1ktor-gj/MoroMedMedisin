@@ -37,16 +37,19 @@ body{
 #forsidetekst > h1{
 font-size: 50px;
 font-weight: bold;
+padding-left: 20px;
 }
 
 #forsidetekst > h3{
+  padding-left: 20px;
     font-size: 20px;
     font-weight: bold;
     font-style: italic;
     text-align: left;
-    margin-top: -20px;
+    margin-top: -10px;
+    margin-bottom: 20px;
     max-width: 400px;
-    text-align: center;
+    text-align: start;
 }
 #forsidetekst > h3 > a{
   color: white;
@@ -58,7 +61,7 @@ font-weight: bold;
 
 
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   #index{
     background-position: center;
     background-repeat: no-repeat;
@@ -75,13 +78,22 @@ font-weight: bold;
 #forsidetekst > h1{
   font-size: 40px;
   padding-bottom:5px;
+  
   }
 
 #forsidetekst > h3{
   font-size: 18px;
   text-align: start;
-}
 
+}
+@media screen and (max-width: 340px){
+  #forsidetekst > h3{
+    text-align:center;
+    padding-bottom: 10px;
+    padding-left: 10px;
+  }
+
+}
 }
 /* NAVBAR */
 header {
@@ -174,7 +186,7 @@ header {
   font-size: 1px;
 }
 
-@media(max-width: 550px){
+@media(max-width: 600px){
     header{
         flex-direction: column;
     }
@@ -206,7 +218,11 @@ header {
         background-color: #141b25;
     }
   }
-
+  @media screen and (max-width: 340px){
+    header{
+      width: auto;
+    }
+  }
 
 /* VIRUS OG BAKTERIER */
 
@@ -219,9 +235,9 @@ header {
 }
 .container > .boks{ 
   position: relative;
-  width: 350px;
-  height: 400px;
-  padding: 40px;
+  max-width: 350px;
+  height: 350px;
+  padding: 20px;
   background-color: whitesmoke;
   border-radius: 4px;
   margin: 20px;
@@ -276,8 +292,13 @@ header {
   margin: 15px;
   border-radius: 30px;
 }
+.container > .boks:hover{
+  transition: all .3s ease-in-out;
+  max-width: 450px;
+  font-size: 18px;
+}
 
-@media screen and (max-width: 550px){
+@media screen and (max-width: 600px){
   .container{
     width:100vw;
     display: flex;
@@ -286,7 +307,7 @@ header {
     justify-content:center;
     align-items: center;
   }
-
+ 
   .infovirbak{
     display: flex;
     flex-direction: column;
@@ -300,7 +321,21 @@ header {
     padding: 20px;
     border-radius: 50px;
   }
+  @media screen and (max-width: 340px){
+    .container{
+      width: auto;
+    }
+    .container > .boks{
+      height: 100px;
+    }
+    .container > .boks > h3{
+      padding-bottom: 10px;
+    }
+    .container > .boks:hover{
+      min-height: 500px;
+    }
 
+  }
 }
 /* MULIPLE CHOICE QUIZ */
 
@@ -376,23 +411,25 @@ input[type="radio"] {
   display: grid;
   grid-template-rows: 1fr 1fr;
   grid-template-columns: 1fr 1fr;
-  padding-left: 200px;
+  padding-left: 15%;
 }
-
-@media screen and (max-width: 550px){
+.quiz-container > .d-flex >.answers > .riktig{
+  color: red;
+}
+@media screen and (max-width: 600px){
 
  .d-flex{
   grid-template-columns: 1fr;
   grid-template-rows: 1fr;
   padding: 0;
-  width: 100vw;
  }
  .question {
-  width:72%;
+  width:90%;
   margin-bottom: 20px;
   background-color: white;
   padding:20px;
 }
+
 
 }
 /* ANATOMI */
@@ -433,11 +470,15 @@ input[type="radio"] {
 }
 
 .ryggradinfo > p{
-  padding: 28px;
+  padding: 20px;
+  background-color: #507dbc;
+  color: black;
+  border-radius: 15px;
+
 }
 
 .container2{
-  width:100vw;
+  max-width:100vw;
   display: flex;
   flex-wrap: wrap;
   justify-content:center;
@@ -446,7 +487,7 @@ input[type="radio"] {
 .container2 > .boks2{ 
   position: relative;
   width: 350px;
-  height: 400px;
+  height: 450px;
   padding: 40px;
   background-color: whitesmoke;
   border-radius: 4px;
@@ -463,7 +504,7 @@ input[type="radio"] {
   font-size: 18px;
 }
 
-@media screen and (max-width: 550px) {
+@media screen and (max-width: 600px) {
   
   .infoanat{
     margin:20px;
@@ -486,8 +527,29 @@ input[type="radio"] {
   .ryggradinfo > p{
     padding: 15px;
   }
-  
 
+  .container2 > .boks2{ 
+    position: relative;
+    max-width: 350px;
+    max-height: 500px;
+  }
+
+}
+
+@media screen and (max-width: 340px) {
+  #anatimg{
+    max-width: 85%;
+  }
+  .container2 > .boks2{ 
+    position: relative;
+    max-width: 350px;
+    height: 600px;
+  }
+  .container2 > .boks2:hover{
+    max-width: 450px;
+    min-height: 600px;
+
+  }
 }
 /* TRE PÅ RAD JAVASCRIPT SPILL */
 
@@ -561,7 +623,56 @@ input[type="radio"] {
   cursor: pointer;
 }
 
-@media screen and (max-width: 550px) {
+/* KILDER */
+.sources{
+  color: white;
+}
+.kilder{
+  margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+
+}
+
+.kilder > .kildedel > h3{
+  font-size: 20px;
+  text-decoration: underline;
+}
+
+.kildedel{
+  max-width: 400px;
+  border: 1px solid white;
+  word-wrap: break-word;
+  padding:10px;
+  display: flex;
+  flex-direction: column;
+
+}
+
+.kilder > .kildedel > a{
+  text-decoration: none;
+  color: white;
+  margin-top: 8px;
+}
+
+
+@media screen and (max-width: 600px){
+  .kilder{
+    flex-direction: column;
+  }
+  .kildedel{
+    margin: 10px;
+    max-width: 80vw;
+  }
+  h1,h3{
+    text-align: center;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
   .tttcontainer{
     max-width: 300px;
     max-height: 300px;
@@ -581,16 +692,4 @@ input[type="radio"] {
   }
 }
 
-.kilder{
-  color: white;
-  margin-left: 10px;
-}
 
-.kilder > h3{
-  font-size: 20px;
-  text-decoration: underline;
-}
-
-.kilder > p{
-  padding: 5px;
-}
